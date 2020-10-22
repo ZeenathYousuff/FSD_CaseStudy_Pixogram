@@ -1,0 +1,56 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+</head>
+<body>
+<div class="container my-container">
+    <%- include('includes/nav.ejs') %>
+    <div>
+        <div class="row">
+            <div class="col-md-3 center-block text-center">
+                <span>
+                    <a href="#" class="account">Account</a>
+                </span>
+            </div>
+            <div class="col-md-9 center-title">
+                <span>
+                    <h4>Login</h4>
+                </span>
+            </div>
+        </div>
+        <form action="/login" method="POST">
+            <div class="row content-block">
+                <div class="col-md-3 center-block text-center vertical-menu">
+                    <a href="/login" class="active">Login</a>
+                    <a href="/register">Register</a>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-2">
+                             <label for="username">Username:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="password">Password:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="password" name="password" required>
+                        </div>
+                    </div>
+                    <div class="row content-block center-block text-center">
+                        <div class="col-md-6">
+                            <input class="btn btn-light" type="submit" value="Login">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<%- include('includes/end.ejs') %>

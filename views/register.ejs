@@ -1,0 +1,113 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<script type="text/javascript" src="/javascripts/register.js"></script>
+</head>
+<body>
+<div class="container my-container">
+    <%- include('includes/nav.ejs') %>
+    <div>
+        <div class="row">
+            <div class="col-md-3 center-block text-center">
+                <span>
+                    <a href="#" class="account">Account</a>
+                </span>
+            </div>
+            <div class="col-md-9 center-title">
+                <span>
+                    <h4>Register</h4>
+                </span>
+            </div>
+        </div>
+        <form action="/register"  method="POST" enctype="multipart/form-data" onsubmit="return validateRegistration()">
+            <div class="row content-block">
+                <div class="col-md-3 center-block text-center vertical-menu">
+                    <a href="/login">Login</a>
+                    <a href="/register" class="active">Register</a>
+                </div>
+                <div class="col-md-9">
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="firstname">Firstname:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="firstname" name="firstname" pattern="[a-zA-Z]+"  title="Should enter alphabets only"  required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="lastname">Lastname:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="lastname" name="lastname" pattern="[a-zA-Z]+"  title="Should enter alphabets only" title="Should enter alphabets only"  required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="username">Username:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="username" name="username" pattern="(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,12})$" title="Must be alphanumeric that should not start with a number and should have 8 to 12 characters" required>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="button" class="btn btn-light" id="check" name="check" value="Check" onclick="checkUser()">
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="dob">Date of Birth:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="date" class="form-control" id="dob" name="dob" required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="password">Password:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="password" name="password" pattern="(?!^[A-Z]*$)^([A-Za-z0-9-.#%$!]+{8,12})$" title="Must be alphanumeric , can contain special characters- . # % $ ! and should have 8 to 12 characters that contains at-least one capital letter" required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="repeat-password">Repeat Password:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="repeat-password" name="repeat-password" required>
+                        </div>
+                        <div class="col-md-5">
+                            <span id='message' style="color: red"></span>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="pro-img">Profile Picture:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="file" name="img" id="img" class="file" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="row content-block center-block text-center">
+                        <div class="col-md-3">
+                            <input class="btn btn-light" id="submit" type="submit" value="Register" >
+                        </div>
+                        <div class="col-md-3">
+                            <input class="btn btn-light" type="reset" value="Reset">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<%- include('includes/end.ejs') %>

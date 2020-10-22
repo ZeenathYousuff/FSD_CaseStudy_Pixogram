@@ -1,0 +1,41 @@
+login
+signup
+
+forgot_pwd
+change_pwd
+
+logout
+
+upload/images
+upload/videos
+
+delete/images
+delete/videos
+
+====================================
+/api/pixogram
+    /users
+        /login
+            get, login page
+        /login
+            post, data {username, password}
+        /signup
+            post, data {username, password}
+        /change_pwd
+        /forgot_pwd
+        /logout
+        /update
+
+    /images
+        /upload
+        /delete
+        /likes
+        /dislikes
+
+    /videos
+        /upload
+        /delete
+        /likes
+        /dislikes
+
+

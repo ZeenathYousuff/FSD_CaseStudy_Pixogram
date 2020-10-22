@@ -1,0 +1,61 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+
+.row {
+  width: 100%;
+}
+
+a{
+  color: black !important;
+}
+
+
+.center-title{
+  border: black solid;
+  border-width: 1px;
+  padding: 2px 15px 2px 15px;
+  background-color: #eee;
+}
+
+.user-img{
+  width: 60px;
+  height: 60px;
+}
+
+.img-row{
+  margin-top: 20px;
+}
+
+.vertical-menu {
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  display: block;
+  padding: 12px;
+}
+
+.vertical-menu a.active {
+  background-color: #ccc;
+}
+
+.content-block{
+  margin-top: 20px;
+}
+
+.account-btn{
+  border: black solid;
+  border-width: 1px;
+  background-color: #ccc;
+  padding: 2px 15px 2px 15px;
+}
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+    <hr/>
+
+<form action="/api/pixogram/media/videos" enctype="multipart/form-data" method="POST">
+    Select videos: <input type="file" name="video" />
+    <input type="submit" value="Upload your videos"/>
+  </form>
+
+    <hr> 
+
+    <table border="1">
+      <tr>
+        <th>Video</th>
+        <th>Player</th>
+      </tr>
+      <% for(var i=0; i < data.length; i++) { %>
+      <tr>
+        <td><%= data[i].filename %></td>
+        <td><video width="320" height="240" controls>
+          <source src="/api/pixogram/media/videos/<%= data[i]._id %>" type="video/mp4">
+        Your browser does not support the video tag.
+        </video></td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
