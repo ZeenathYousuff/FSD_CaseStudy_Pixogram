@@ -1,0 +1,39 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<link rel='stylesheet' href='/stylesheets/uploadMedia.css' />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<div class="container my-container">
+    <%- include('includes/nav.ejs') %>
+    <div>
+        <div class="row">
+             <div class="col-md-12 center-title">
+                <span>
+                    <h4>Media Detail</h4>
+                </span>
+            </div>
+        </div>
+        <div>
+            <% images.forEach(function(image) { %>
+            <div>
+                <div>
+                    <h5><%= image.title %></h5>
+                    <img src="data:image/<%=image.img.contentType%>;base64,
+                     <%=image.img.data.toString('base64')%>" width="300" height="250">
+                    <div>
+
+                        <p><%= image.desc %></p>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+
+
+    </div>
+
+</div>
+<%- include('includes/end.ejs') %>

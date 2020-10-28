@@ -2,6 +2,7 @@ const Users = require("./../models/register");
 let jwt = require('jsonwebtoken');
 const jwtOptions = require('./jwt-options');
 const bcrypt = require('bcrypt');
+let foundUser = {};
 
 module.exports = async function(user, res){
   // actual must be in database, find data if matched
@@ -19,7 +20,10 @@ module.exports = async function(user, res){
                     let payload = {id: resUser.id, username:resUser.username, email: resUser.email};
                     let token = jwt.sign(payload, jwtOptions.secretOrKey);
 
-                    res.json({success: true, token: token});
+                   // res.json({success: true, token: token});
+                    module.exports.foundUser = resUser;
+                    res.redirect('/uploadSingleMedia');
+                   // res.render('uploadSingleMedia', { data:{ titleView: 'Upload Page'}, data: { resUser } });
                 }
                 else{
                    res.status(203).json({success:false, message:"Invalid Password"});
@@ -28,18 +32,6 @@ module.exports = async function(user, res){
 
         }
     })
-
-
-    /*var isValid = true;
-    if(isValid){
-        var payload = {id: 1254, username: "mark carl", email: "mark.carl@gmail.com", role: "user"};
-
-          let token = jwt.sign(payload, jwtOptions.secretOrKey);
-          
-          res.json({success: true, token: token});
-
-    } else {
-        res.json({success: false, message:"User not found in database"});
-    }
-*/
 }
+
+//module.exports.foundUser = foundUser;

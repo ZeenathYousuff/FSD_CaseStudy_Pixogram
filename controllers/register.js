@@ -56,8 +56,9 @@ exports.registerUser =async (req, res) =>
                     res.end();
                 }
                 else {
-                    console.log("User saved");
-                    res.send(user);
+                    res.render('login', { data:{ titleView: 'Login Page'}, data: { user } });
+                  //  console.log("User saved");
+                  //  res.send(user);
                 }
             });
         });

@@ -7,15 +7,16 @@ var CommentSchema = new mongoose.Schema({
 });
 
 // validation-> https://mongoosejs.com/docs/validation.html
-var ImageSchema = new mongoose.Schema({ 
-	caption: String, 
-	description: String, 
+var ImageSchema = new mongoose.Schema({
+	userId: String,
+	title: String,
+	desc: String,
 	img: 
 	{ 
 		data: Buffer, 
 		contentType: String 
     },
-    comments  : [CommentSchema]
+    tags  : [String]
 }); 
 /*
 // embedded

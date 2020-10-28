@@ -20,6 +20,9 @@ var uploadSingleMediaRouter = require('./routes/uploadSingleMedia');
 //UploadMultipleMedia Router
 var uploadMultipleMediaRouter = require('./routes/uploadMultipleMedia');
 
+//myMedia Router
+var myMediaRouter = require('./routes/myMedia')
+
 
 var app = express();
 
@@ -39,7 +42,7 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/uploadSingleMedia', uploadSingleMediaRouter);
 app.use('/uploadMultipleMedia', uploadMultipleMediaRouter);
-
+app.use('/myMedia', myMediaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

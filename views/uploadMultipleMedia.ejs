@@ -21,7 +21,7 @@
                 </span>
             </div>
         </div>
-        <form action="/login" method="POST">
+        <form action="/uploadMultipleMedia" method="POST" enctype="multipart/form-data">
             <div class="row content-block">
                 <div class="col-md-3 center-block text-center vertical-menu">
                     <a href="/uploadSingleMedia" >Single Media</a>
@@ -33,7 +33,7 @@
                             <label for="username">Browse:</label>
                         </div>
                         <div class="col-md-7">
-                            <input type="file" name="img" id="img" class="file " accept="image/*" value="Browse" required>
+                            <input type="file" name="img" id="img" class="file " accept="image/*" value="Browse" multiple required>
                         </div>
                         <div class="col-md-2">
                             <input class="btn btn-light" type="submit" value="Upload">
