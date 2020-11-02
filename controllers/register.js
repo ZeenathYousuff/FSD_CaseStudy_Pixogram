@@ -49,8 +49,7 @@ exports.registerUser =async (req, res) =>
 
             Users.create(user, (err, item) => {
                 if (err) {
-                    console.log('validation error',reason.message);
-                    res.status(400).send(reason.message);
+                    console.log('validation error',err);
                     res.end();
                 }
                 else {

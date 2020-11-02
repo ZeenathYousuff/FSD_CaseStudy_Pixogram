@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/SampleUser', {
+mongoose.connect('mongodb://localhost:27017/Pixogram', {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }).then(function () {
