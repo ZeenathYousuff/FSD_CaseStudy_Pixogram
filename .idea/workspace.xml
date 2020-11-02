@@ -35,12 +35,6 @@
       <change afterPath="$PROJECT_DIR$/../PUG_Assignment/views/layouts/main-layout.pug" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PUG_Assignment/views/name.ejs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PUG_Assignment/views/user.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/myMedia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/follower.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/Follower.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/myMedia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/myMedia.ejs" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Post_Backend_NodeJS/app.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Post_Backend_NodeJS/models/post.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Routing_Demo" afterDir="false" />
@@ -120,17 +114,8 @@
       <change beforePath="$PROJECT_DIR$/../PUG_Assignment/views/404.pug" beforeDir="false" afterPath="$PROJECT_DIR$/../PUG_Assignment/views/404.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PUG_Assignment/views/name.pug" beforeDir="false" afterPath="$PROJECT_DIR$/../PUG_Assignment/views/name.pug" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/uploadMultipleMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/uploadMultipleMedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/uploadSingleMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/uploadSingleMedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/image.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/uploadMultipleMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/uploadMultipleMedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/uploadSingleMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/uploadSingleMedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utility/token.js" beforeDir="false" afterPath="$PROJECT_DIR$/utility/token.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/includes/nav.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/nav.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/uploadMultipleMedia.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/uploadMultipleMedia.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/uploadSingleMedia.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/uploadSingleMedia.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Follower.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/follower.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PodeCast_Demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PodeCast_Demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Routing_GET_POST_Demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Routing_GET_POST_Demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Routing_GET_POST_Demo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Routing_GET_POST_Demo/index.js" afterDir="false" />
@@ -212,7 +197,11 @@
       <workItem from="1603770148840" duration="1760000" />
       <workItem from="1603783928691" duration="41000" />
       <workItem from="1603808624060" duration="1417000" />
-      <workItem from="1603894380318" duration="4761000" />
+      <workItem from="1603894380318" duration="5768000" />
+      <workItem from="1603939065432" duration="5000" />
+      <workItem from="1603940417962" duration="648000" />
+      <workItem from="1604028886761" duration="714000" />
+      <workItem from="1604041933230" duration="617000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1603369269179</created>
@@ -228,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603369832476</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1603903525848</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603903525848</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,26 +239,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="417" y="142" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1602764046818" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1603369811300">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1603903524975">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603369811300" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1603903524975" />
     <state x="0" y="190" key="FileChooserDialogImpl" timestamp="1603894503230">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="0" y="190" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1603894503230" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1603369914862">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1603903561455">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603369914862" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1603903561455" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602944660553">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1602944660553" />
-    <state x="285" y="212" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603369283823">
+    <state x="285" y="212" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1603903501856">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="285" y="212" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1603369283823" />
+    <state x="285" y="212" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1280.680@0.0.1280.680" timestamp="1603903501856" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1603630755907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

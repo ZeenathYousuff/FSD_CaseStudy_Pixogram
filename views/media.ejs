@@ -1,0 +1,95 @@
+<%- include('includes/head.ejs') %>
+
+</head>
+
+<script type="text/javascript">
+    function validateDetails()
+    {
+        return true;
+
+    }
+
+</script>
+<script type="text/javascript" src="/javascripts/common.js"></script>
+<body class="container">
+<%- include('includes/nav.ejs') %>
+<h1> My Media</h1>
+<% if (!!data.media) { %>
+    <% data.media.forEach(function(med) { %>
+
+    <div>
+
+        <div>
+            <table>
+                <tr>
+                    <td>  <img src="data:image/<%=med.media.contentType%>;base64,
+                     <%=med.media.imgdata.toString('base64')%>" width="300" height="250"></td>
+                    <td>Media Title : <p><%= med.mediatitle %></p>
+                        Media Description: <p><%= med.description %>
+                    </td>
+                    <td>
+
+                        <% if (!!data.comments) { %>
+                            Total Comments : <% data.comments.length %><br>
+
+                            <% data.comments.forEach(function(comment) { %>
+
+                            <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+                            <%= comment.comments %>
+                            </textarea><br>
+
+
+                        <% })
+                        }
+                        %>
+
+                        <form action="/media/add-comments"  method="POST">
+                           Add Comment <input type="text" name="comment" />
+                            <input type="text" class="form-control" id="username" name="username" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
+                            <input type="text" class="form-control" id="mediaId" name="mediaId" value="<%= med._id %>" required="true" placeholder="Username"/>
+                            <input type="submit" />
+                        </form>
+
+
+                    </td>
+
+
+
+
+
+
+
+
+                </tr>
+                <tr>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+            <button onClick="deleteMedia('<%= data.customer._id %>','<%= med._id %>')">Delete Media </button>
+
+
+
+        </div>
+    </div>
+
+<% })
+}
+%>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+</html>

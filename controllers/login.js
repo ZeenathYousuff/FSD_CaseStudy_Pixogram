@@ -1,4 +1,9 @@
+
+var sessionstorage = require('sessionstorage');
+
 exports.getLoginUser = (req,res)=>{
+    sessionstorage.removeItem('USER_ID');
+    sessionstorage.clear();
     res.render('login', { title: 'Login Page' });
 }
 

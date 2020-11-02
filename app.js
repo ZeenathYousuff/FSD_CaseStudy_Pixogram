@@ -6,7 +6,6 @@ var logger = require('morgan');
 const passport = require('passport');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 //Login Router
 var loginRouter = require('./routes/login');
@@ -23,6 +22,18 @@ var uploadMultipleMediaRouter = require('./routes/uploadMultipleMedia');
 //myMedia Router
 var myMediaRouter = require('./routes/myMedia')
 
+//follower Router
+var followerRouter = require('./routes/followers')
+
+//account Router
+var accountRouter = require('./routes/account')
+
+//blockedaccount Router
+var blockedaccountRouter = require('./routes/blockedaccounts')
+
+//accountUpdate Router
+var accountUpdateRouter = require('./routes/accountUpdate')
+
 
 var app = express();
 
@@ -37,12 +48,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', loginRouter);
-app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/uploadSingleMedia', uploadSingleMediaRouter);
 app.use('/uploadMultipleMedia', uploadMultipleMediaRouter);
 app.use('/myMedia', myMediaRouter);
+app.use('/followers', followerRouter);
+app.use('/account', accountRouter);
+app.use('/blockedaccounts', blockedaccountRouter);
+app.use('/accountUpdate',accountUpdateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

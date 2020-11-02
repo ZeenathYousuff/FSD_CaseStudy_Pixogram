@@ -22,9 +22,7 @@ exports.checkUser = async (req, res)=>
         res.json({success: false, message: "Error occurred"});
     });
 
-   // res.send(result);
-    //const names = Name.fetchAll();
-    //res.render('user',{names:names,pageTitle:'Display Name', path: '/user/print-name'})
+  
 }
 
 exports.registerUser =async (req, res) =>
@@ -56,7 +54,7 @@ exports.registerUser =async (req, res) =>
                     res.end();
                 }
                 else {
-                    res.render('login', { data:{ titleView: 'Login Page'}, data: { user } });
+                    res.render('login', { title: 'Login Page', user:    user } );
                   //  console.log("User saved");
                   //  res.send(user);
                 }

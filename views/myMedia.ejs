@@ -1,9 +1,5 @@
 <%- include('includes/head.ejs') %>
-<link rel='stylesheet' href='/stylesheets/login.css' />
-<link rel='stylesheet' href='/stylesheets/uploadMedia.css' />
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel='stylesheet' href='/stylesheets/myMedia.css' />
 </head>
 <body>
 <div class="container my-container">
@@ -16,23 +12,26 @@
                 </span>
             </div>
         </div>
-        <div>
+        <div class="row">
+            <% if (images.length>0) { %>
             <% images.forEach(function(image) { %>
-            <div>
-                <div>
-                    <h5><%= image.title %></h5>
-                    <img src="data:image/<%=image.img.contentType%>;base64,
+            <div class="col-md-6 ">
+                <h5><%= image.title %></h5>
+                <img src="data:image/<%=image.img.contentType%>;base64,
                      <%=image.img.data.toString('base64')%>" width="300" height="250">
-                    <div>
+           </div>
+           <div class="col-md-6">
+            <textarea readonly rows="5"><%= image.desc %></textarea>
+            <textarea readonly rows="2"><%= image.tags %></textarea>
+            
+           </div>
+           <% }) %>
+           <% } else { %>
+            <h1>No Images found</h1>
+           
 
-                        <p><%= image.desc %></p>
-                    </div>
-                </div>
-            </div>
-            <% }) %>
-        </div>
-
-
+            <% } %>
+       </div>
     </div>
 
 </div>

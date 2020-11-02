@@ -6,7 +6,7 @@ var CommentSchema = new mongoose.Schema({
     dislikes  : Number
 });
 
-// validation-> https://mongoosejs.com/docs/validation.html
+
 var ImageSchema = new mongoose.Schema({
 	userId: String,
 	title: String,

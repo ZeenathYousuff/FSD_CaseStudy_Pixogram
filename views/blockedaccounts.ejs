@@ -1,0 +1,110 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+<script src="/javascripts/blockedaccounts.js"></script>
+</head>
+<body>
+<div class="container my-container">
+    <%- include('includes/nav.ejs') %>
+    <div>
+        <div class="row">
+            <div class="col-md-3 center-block text-center">
+                <span>
+                    <a href="#" class="account">Account</a>
+                </span>
+            </div>
+            <div class="col-md-9 center-title">
+                <span>
+                    <h4>Newsfeed</h4>
+                </span>
+            </div>
+        </div>
+      
+            <div class="row content-block">
+                <div class="col-md-3 center-block text-center vertical-menu">
+                    <a href="/account">Newsfeed</a>
+                    <a href="/blockedaccounts" class="active">Blocked Accounts</a>
+                    <a href="/accountUpdate">Account Update</a>
+                    <a href="/login">Logout</a>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <% if (users.length>0) { %>
+                        <% users.forEach(function(user) { %>
+                        <div class="col-md-4">
+                            <h5><%= user.blockedFirstName + " " + user.blockedLastName %></h5>
+                            <img src="data:image/<%=user.img.contentType%>;base64,
+                                 <%=user.img.data.toString('base64')%>" width="100%" height="250">
+                            <button class="btn btn-secondary btn-block" onclick="unblockUser('<%= user._id %>')">Unblock</button>
+                       </div>
+                      
+                       <% }) %>
+                       <% } else { %>
+                        <h1>No Blocked Accounts found</h1>
+                       
+            
+                        <% } %>
+                       
+                   </div>
+            
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 center-title">
+                   <span>
+                       <h4>Block Users</h4>
+                   </span>
+               </div>
+           </div>
+           <form action="/blockedaccounts"  method="POST" enctype="multipart/form-data">
+               <div class="row">
+                <div class="col-md-9">
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="firstname">Firstname:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="firstname" name="firstname" pattern="[a-zA-Z]+"  title="Should enter alphabets only"  required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="lastname">Lastname:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="lastname" name="lastname" pattern="[a-zA-Z]+"  title="Should enter alphabets only" title="Should enter alphabets only"  required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="email">Email:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="row content-block">
+                        <div class="col-md-2">
+                            <label for="pro-img">Profile Picture:</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="file" name="img" id="img" class="file" accept="image/*" required>
+                        </div>
+                    </div>
+                    <div class="row content-block center-block text-center">
+                        <div class="col-md-3">
+                            <input class="btn btn-light" id="submit" type="submit" value="Block Account" >
+                        </div>
+                    </div>
+        
+                </div>
+        
+               </div>
+               
+              </form>
+
+       
+
+    </div>
+
+</div>
+<%- include('includes/end.ejs') %>

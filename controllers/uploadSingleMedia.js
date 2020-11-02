@@ -1,14 +1,21 @@
 var Image = require('./../models/image');
 var fs = require('fs');
-const userData = require('../utility/token');
+var sessionstorage = require('sessionstorage');
 
 exports.getSingleMediaUpload = (req,res)=>{
-    res.render('uploadSingleMedia', { title: 'Media Upload Page' });
+    console.log(sessionstorage.getItem('USER_ID')); 
+    if(sessionstorage.getItem('USER_ID') == null)
+    {
+        res.render('login', { title: 'Login Page' });
+    }else{
+        res.render('uploadSingleMedia', { title: 'Media Upload Page' });
+    }
+    
 }
 
 exports.uploadImage = (req,res) =>{
     var obj = {
-        userId:userData.foundUser._id,
+        userId:sessionstorage.getItem('USER_ID'),
         title: req.body.title,
         desc: req.body.desc,
         img: {
@@ -24,9 +31,8 @@ exports.uploadImage = (req,res) =>{
             res.end();
         }
         else {
-            // item.save();
-            console.log(userData.foundUser);
-            res.redirect('/uploadSingleMedia');
+             console.log(obj);
+             res.redirect('/uploadSingleMedia');
         }
     });
 }

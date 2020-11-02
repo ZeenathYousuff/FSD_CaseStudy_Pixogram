@@ -1,0 +1,53 @@
+<%- include('includes/head.ejs') %>
+<link rel='stylesheet' href='/stylesheets/login.css' />
+</head>
+<body>
+<div class="container my-container">
+    <%- include('includes/nav.ejs') %>
+    <div>
+        <div class="row">
+            <div class="col-md-3 center-block text-center">
+                <span>
+                    <a href="#" class="account">Account</a>
+                </span>
+            </div>
+            <div class="col-md-9 center-title">
+                <span>
+                    <h4>Newsfeed</h4>
+                </span>
+            </div>
+        </div>
+        <form action="/login" method="POST">
+            <div class="row content-block">
+                <div class="col-md-3 center-block text-center vertical-menu">
+                    <a href="/account" class="active">Newsfeed</a>
+                    <a href="/blockedaccounts">Blocked Accounts</a>
+                    <a href="/accountUpdate">Account Update</a>
+                    <a href="/login">Logout</a>
+                </div>
+                <div class="col-md-9">
+                    <% if (newsfeeds.length>0) { %>
+                        <% newsfeeds.forEach(function(news) { %>
+                    <div class="row">
+                        <div class="col-md-2">
+                             <label ><%= news.dateTime %></label>
+                        </div>
+                        <div class="col-md-10">
+                           <p><%= news.newsfeedTitle %></p>
+                        </div>
+                    </div>
+                    <% }) %>
+           <% } else { %>
+            <h1>No newsfeeds found</h1>
+           
+
+            <% } %>
+            
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<%- include('includes/end.ejs') %>

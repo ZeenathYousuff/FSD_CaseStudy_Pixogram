@@ -1,8 +1,14 @@
 var Image = require('./../models/image');
 var fs = require('fs');
+var sessionstorage = require('sessionstorage');
 
 exports.getMultipleMediaUpload = (req,res)=>{
+    if(sessionstorage.getItem('USER_ID') == null)
+    {
+        res.render('login', { title: 'Login Page' });
+    }else{
     res.render('uploadMultipleMedia', { title: 'Media Upload Page' });
+    }
 }
 
 exports.uploadMultipleImage = (req,res) =>{

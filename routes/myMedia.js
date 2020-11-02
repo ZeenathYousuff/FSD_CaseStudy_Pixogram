@@ -4,6 +4,6 @@ const mediaController = require('../controllers/myMedia');
 
 
 //GET : login page
-router.get('/:userId', mediaController.getMyMedia);
+router.get('/', mediaController.getMyMedia);
 
 module.exports = router;
